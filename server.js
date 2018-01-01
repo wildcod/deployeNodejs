@@ -3,6 +3,8 @@ const path = require('path')
 const app = express()
 
 
+const SERVER_PORT = process.env.PORT || 3333
+
 app.use('/public' , express.static(path.join(__dirname, 'public')))
 
 app.get('/' , (req, res) => {
@@ -10,4 +12,4 @@ app.get('/' , (req, res) => {
 })
 
 
-app.listen(3333, () => console.log("Server is started"))
+app.listen(SERVER_PORT, () => console.log("Server is started"))
